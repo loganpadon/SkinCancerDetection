@@ -1,5 +1,5 @@
 # Separates the database into an 80-20 split database
-from shutil import  move
+from shutil import move
 from random import seed, randint
 import pandas as pd
 seed(333)

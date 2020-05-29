@@ -1,0 +1,246 @@
+Model: "son_of_deepsqueeze"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_3 (InputLayer)            [(None, 600, 450, 3) 0                                            
+__________________________________________________________________________________________________
+prune_low_magnitude_conv1 (Prun (None, 299, 224, 64) 3522        input_3[0][0]                    
+__________________________________________________________________________________________________
+prune_low_magnitude_relu_conv1  (None, 299, 224, 64) 1           prune_low_magnitude_conv1[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_pool1 (Prun (None, 149, 111, 64) 1           prune_low_magnitude_relu_conv1[0]
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/squee (None, 149, 111, 16) 2066        prune_low_magnitude_pool1[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/relu_ (None, 149, 111, 16) 1           prune_low_magnitude_fire2/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/expan (None, 149, 111, 64) 2114        prune_low_magnitude_fire2/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/expan (None, 149, 111, 64) 18498       prune_low_magnitude_fire2/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/relu_ (None, 149, 111, 64) 1           prune_low_magnitude_fire2/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/relu_ (None, 149, 111, 64) 1           prune_low_magnitude_fire2/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire2/conca (None, 149, 111, 128 1           prune_low_magnitude_fire2/relu_ex
+                                                                 prune_low_magnitude_fire2/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/squee (None, 149, 111, 16) 4114        prune_low_magnitude_fire2/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/relu_ (None, 149, 111, 16) 1           prune_low_magnitude_fire3/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/expan (None, 149, 111, 64) 2114        prune_low_magnitude_fire3/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/expan (None, 149, 111, 64) 18498       prune_low_magnitude_fire3/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/relu_ (None, 149, 111, 64) 1           prune_low_magnitude_fire3/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/relu_ (None, 149, 111, 64) 1           prune_low_magnitude_fire3/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire3/conca (None, 149, 111, 128 1           prune_low_magnitude_fire3/relu_ex
+                                                                 prune_low_magnitude_fire3/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_pool3 (Prun (None, 74, 55, 128)  1           prune_low_magnitude_fire3/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/squee (None, 74, 55, 32)   8226        prune_low_magnitude_pool3[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/relu_ (None, 74, 55, 32)   1           prune_low_magnitude_fire4/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/expan (None, 74, 55, 128)  8322        prune_low_magnitude_fire4/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/expan (None, 74, 55, 128)  73858       prune_low_magnitude_fire4/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/relu_ (None, 74, 55, 128)  1           prune_low_magnitude_fire4/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/relu_ (None, 74, 55, 128)  1           prune_low_magnitude_fire4/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire4/conca (None, 74, 55, 256)  1           prune_low_magnitude_fire4/relu_ex
+                                                                 prune_low_magnitude_fire4/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/squee (None, 74, 55, 32)   16418       prune_low_magnitude_fire4/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/relu_ (None, 74, 55, 32)   1           prune_low_magnitude_fire5/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/expan (None, 74, 55, 128)  8322        prune_low_magnitude_fire5/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/expan (None, 74, 55, 128)  73858       prune_low_magnitude_fire5/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/relu_ (None, 74, 55, 128)  1           prune_low_magnitude_fire5/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/relu_ (None, 74, 55, 128)  1           prune_low_magnitude_fire5/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire5/conca (None, 74, 55, 256)  1           prune_low_magnitude_fire5/relu_ex
+                                                                 prune_low_magnitude_fire5/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_pool5 (Prun (None, 36, 27, 256)  1           prune_low_magnitude_fire5/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/squee (None, 36, 27, 48)   24626       prune_low_magnitude_pool5[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/relu_ (None, 36, 27, 48)   1           prune_low_magnitude_fire6/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/expan (None, 36, 27, 192)  18626       prune_low_magnitude_fire6/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/expan (None, 36, 27, 192)  166082      prune_low_magnitude_fire6/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/relu_ (None, 36, 27, 192)  1           prune_low_magnitude_fire6/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/relu_ (None, 36, 27, 192)  1           prune_low_magnitude_fire6/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire6/conca (None, 36, 27, 384)  1           prune_low_magnitude_fire6/relu_ex
+                                                                 prune_low_magnitude_fire6/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/squee (None, 36, 27, 48)   36914       prune_low_magnitude_fire6/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/relu_ (None, 36, 27, 48)   1           prune_low_magnitude_fire7/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/expan (None, 36, 27, 192)  18626       prune_low_magnitude_fire7/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/expan (None, 36, 27, 192)  166082      prune_low_magnitude_fire7/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/relu_ (None, 36, 27, 192)  1           prune_low_magnitude_fire7/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/relu_ (None, 36, 27, 192)  1           prune_low_magnitude_fire7/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire7/conca (None, 36, 27, 384)  1           prune_low_magnitude_fire7/relu_ex
+                                                                 prune_low_magnitude_fire7/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_pool7 (Prun (None, 17, 13, 384)  1           prune_low_magnitude_fire7/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/squee (None, 17, 13, 64)   49218       prune_low_magnitude_pool7[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/relu_ (None, 17, 13, 64)   1           prune_low_magnitude_fire8/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/expan (None, 17, 13, 256)  33026       prune_low_magnitude_fire8/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/expan (None, 17, 13, 256)  295170      prune_low_magnitude_fire8/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/relu_ (None, 17, 13, 256)  1           prune_low_magnitude_fire8/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/relu_ (None, 17, 13, 256)  1           prune_low_magnitude_fire8/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire8/conca (None, 17, 13, 512)  1           prune_low_magnitude_fire8/relu_ex
+                                                                 prune_low_magnitude_fire8/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/squee (None, 17, 13, 64)   65602       prune_low_magnitude_fire8/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/relu_ (None, 17, 13, 64)   1           prune_low_magnitude_fire9/squeeze
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/expan (None, 17, 13, 256)  33026       prune_low_magnitude_fire9/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/expan (None, 17, 13, 256)  295170      prune_low_magnitude_fire9/relu_sq
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/relu_ (None, 17, 13, 256)  1           prune_low_magnitude_fire9/expand1
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/relu_ (None, 17, 13, 256)  1           prune_low_magnitude_fire9/expand3
+__________________________________________________________________________________________________
+prune_low_magnitude_fire9/conca (None, 17, 13, 512)  1           prune_low_magnitude_fire9/relu_ex
+                                                                 prune_low_magnitude_fire9/relu_ex
+__________________________________________________________________________________________________
+prune_low_magnitude_pool9 (Prun (None, 8, 6, 512)    1           prune_low_magnitude_fire9/concat[
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/sque (None, 8, 6, 80)     82002       prune_low_magnitude_pool9[0][0]  
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/relu (None, 8, 6, 80)     1           prune_low_magnitude_fire14/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/expa (None, 8, 6, 320)    51522       prune_low_magnitude_fire14/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/expa (None, 8, 6, 320)    461122      prune_low_magnitude_fire14/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/relu (None, 8, 6, 320)    1           prune_low_magnitude_fire14/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/relu (None, 8, 6, 320)    1           prune_low_magnitude_fire14/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire14/conc (None, 8, 6, 640)    1           prune_low_magnitude_fire14/relu_e
+                                                                 prune_low_magnitude_fire14/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/sque (None, 8, 6, 80)     102482      prune_low_magnitude_fire14/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/relu (None, 8, 6, 80)     1           prune_low_magnitude_fire15/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/expa (None, 8, 6, 320)    51522       prune_low_magnitude_fire15/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/expa (None, 8, 6, 320)    461122      prune_low_magnitude_fire15/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/relu (None, 8, 6, 320)    1           prune_low_magnitude_fire15/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/relu (None, 8, 6, 320)    1           prune_low_magnitude_fire15/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire15/conc (None, 8, 6, 640)    1           prune_low_magnitude_fire15/relu_e
+                                                                 prune_low_magnitude_fire15/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_pool11 (Pru (None, 3, 2, 640)    1           prune_low_magnitude_fire15/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/sque (None, 3, 2, 96)     122978      prune_low_magnitude_pool11[0][0] 
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/relu (None, 3, 2, 96)     1           prune_low_magnitude_fire10/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/expa (None, 3, 2, 384)    74114       prune_low_magnitude_fire10/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/expa (None, 3, 2, 384)    663938      prune_low_magnitude_fire10/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/relu (None, 3, 2, 384)    1           prune_low_magnitude_fire10/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/relu (None, 3, 2, 384)    1           prune_low_magnitude_fire10/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire10/conc (None, 3, 2, 768)    1           prune_low_magnitude_fire10/relu_e
+                                                                 prune_low_magnitude_fire10/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/sque (None, 3, 2, 96)     147554      prune_low_magnitude_fire10/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/relu (None, 3, 2, 96)     1           prune_low_magnitude_fire11/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/expa (None, 3, 2, 384)    74114       prune_low_magnitude_fire11/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/expa (None, 3, 2, 384)    663938      prune_low_magnitude_fire11/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/relu (None, 3, 2, 384)    1           prune_low_magnitude_fire11/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/relu (None, 3, 2, 384)    1           prune_low_magnitude_fire11/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire11/conc (None, 3, 2, 768)    1           prune_low_magnitude_fire11/relu_e
+                                                                 prune_low_magnitude_fire11/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/sque (None, 3, 2, 112)    172146      prune_low_magnitude_fire11/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/relu (None, 3, 2, 112)    1           prune_low_magnitude_fire12/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/expa (None, 3, 2, 448)    100802      prune_low_magnitude_fire12/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/expa (None, 3, 2, 448)    903618      prune_low_magnitude_fire12/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/relu (None, 3, 2, 448)    1           prune_low_magnitude_fire12/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/relu (None, 3, 2, 448)    1           prune_low_magnitude_fire12/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire12/conc (None, 3, 2, 896)    1           prune_low_magnitude_fire12/relu_e
+                                                                 prune_low_magnitude_fire12/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/sque (None, 3, 2, 112)    200818      prune_low_magnitude_fire12/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/relu (None, 3, 2, 112)    1           prune_low_magnitude_fire13/squeez
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/expa (None, 3, 2, 448)    100802      prune_low_magnitude_fire13/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/expa (None, 3, 2, 448)    903618      prune_low_magnitude_fire13/relu_s
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/relu (None, 3, 2, 448)    1           prune_low_magnitude_fire13/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/relu (None, 3, 2, 448)    1           prune_low_magnitude_fire13/expand
+__________________________________________________________________________________________________
+prune_low_magnitude_fire13/conc (None, 3, 2, 896)    1           prune_low_magnitude_fire13/relu_e
+                                                                 prune_low_magnitude_fire13/relu_e
+__________________________________________________________________________________________________
+prune_low_magnitude_drop13 (Pru (None, 3, 2, 896)    1           prune_low_magnitude_fire13/concat
+__________________________________________________________________________________________________
+prune_low_magnitude_conv10 (Pru (None, 3, 2, 7)      12553       prune_low_magnitude_drop13[0][0] 
+__________________________________________________________________________________________________
+prune_low_magnitude_relu_conv10 (None, 3, 2, 7)      1           prune_low_magnitude_conv10[0][0] 
+__________________________________________________________________________________________________
+prune_low_magnitude_global_aver (None, 7)            1           prune_low_magnitude_relu_conv10[0
+__________________________________________________________________________________________________
+prune_low_magnitude_loss (Prune (None, 7)            1           prune_low_magnitude_global_averag
+==================================================================================================
+Total params: 6,792,930
+Trainable params: 3,400,455
+Non-trainable params: 3,392,475
+__________________________________________________________________________________________________
